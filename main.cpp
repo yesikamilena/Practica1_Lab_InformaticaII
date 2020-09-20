@@ -19,9 +19,13 @@ int main()
     double Adouble;
     int B;
     double C=0;
+    char Cchar;
     double D;
+    int E;
     int N;
     int i;
+    int j;
+
 
     double pi=3.1416;
 
@@ -38,9 +42,14 @@ int main()
             tíldes en la terminal. De ahora en adelante todos los ejemplos de salidas contendrán el mismo error tipográco.
         */
 
+        cout<<"Dame un numero: ";
+        cin>>A;
+        cout<<"Dame otro numero: ";
+        cin>>B;
 
+        C=A%B;
 
-
+        cout<< "El reciduo de la division "<< A <<'/'<< B <<" es: "<< C <<endl<<endl;
 
         break;
 
@@ -50,14 +59,15 @@ int main()
            5 es impar
         */
 
+        cout<<"Dame un numero: ";
+        cin>>N;
 
-
-
+        if(N%2==0)
+            cout<< N <<" es par."<<endl<<endl;
+        else
+            cout<< N <<" es impar."<<endl<<endl;
 
         break;
-
-
-
 
     case 3:
         /* Ejercicio 3. Escriba un programa que pida dos números A y B e imprima en pantalla el mayor.
@@ -97,10 +107,7 @@ int main()
         else
             cout<<"Ambos números son iguales."<<endl<<endl;
 
-
         break;
-
-
 
     case 5:
         /* Ejercicio 5. Escriba un programa que pida dos números A y B e imprima en pantalla la división A/B con redondeo.
@@ -109,7 +116,6 @@ int main()
             Si se ingresan 7 y 3 se debe imprimir:
             7/3=2
         */
-
 
         cout<<"Dame un numero: ";
         cin>>A;
@@ -123,18 +129,13 @@ int main()
 
         cout<<A<<'/'<<B<<'='<<C<<endl<<endl;
 
-
-
-
         break;
-
 
     case 6:
         /* Ejercicio 6. Escriba un programa que pida dos números A y B e imprima en pantalla la potencia A**B, sin hacer uso de librerías matemáticas.
             Ej: si se ingresan 5 y 3 se debe imprimir:
             5∧3=125
         */
-
 
         cout<<"Dame un numero para la base: ";
         cin>>Adouble;             //A será la base
@@ -151,7 +152,6 @@ int main()
             else {
                 cout<<Adouble<<" elevado a "<<B<<"="<<1<<endl<<endl;
             }
-
         }
 
         else if (C<0){
@@ -159,27 +159,21 @@ int main()
             D=Adouble;
 
             while (C+1<0){  //Se pone el -1, porque en la primera iteración se multiplican dos veces la base.
-
             D=D*Adouble;
             C++;
         }
             cout<<A<<" elevado a "<<B<<"="<<D<<endl<<endl;
-
         }
-
 
         else{
             while (C-1>0){  //Se pone el -1, porque en la primera iteración se multiplican dos veces la base.
             D=D*A;
             C--;
         }
-
                     cout<<A<<" elevado a "<<B<<"="<<D<<endl<<endl;
         }
 
         break;
-
-
 
     case 7:
         /* Ejercicio 7. Escriba un programa que pida un número N e imprima en pantalla la suma de todos los números entre 0 y N (incluyéndose el mismo).
@@ -196,15 +190,9 @@ int main()
             C=C+i;
         }
 
-
         cout<<"La sumatoria desde 0 hasta "<<N<< " es: "<<C<<endl<<endl;
 
-
-
-
         break;
-
-
 
     case 8:
         /* Ejercicio 8. Escriba un programa que pida un número N e imprima en pantalla su factorial.
@@ -222,15 +210,9 @@ int main()
             C=C*i;
         }
 
-
         cout<<N<< "!="<<C<<endl<<endl;
 
-
-
-
         break;
-
-
 
     case 9:
         /* Ejercicio 9. Escriba un programa que pida un número N e imprima el perímetro y área de un círculo con radio N. Nota: use 3.1416 como una aproximación de pi.
@@ -239,22 +221,15 @@ int main()
             Area: 3.1416
         */
 
-
         cout<<"Dame un numero: ";
         cin>>N;
-
 
         C=2*pi*N;
         D=pi*N*N;
 
         cout<<"Perimetro: "<< C <<endl<<"Area: "<<D<<endl<<endl;
 
-
-
-
         break;
-
-
 
     case 10:
         /* Ejercicio 10. Escriba un programa que pida un número N e imprima en pantalla todos los múltiplos de dicho número entre 1 y 100.
@@ -266,7 +241,6 @@ int main()
             99
         */
 
-
         i=2;
 
         cout<<"Dame un numero: ";
@@ -276,21 +250,13 @@ int main()
 
         cout<<"Multiplos de "<<N<<" menores que 100: "<<endl;
 
-
         while (C<=100){
             cout<<C<<endl;
             C=N*i;
             i++;
         }
 
-
-
         break;
-
-
-
-
-
 
     case 11:
         /* Ejercicio 11. Escriba un programa que pida un número N e imprima en pantalla su tabla de multiplicar hasta 10xN.
@@ -308,23 +274,17 @@ int main()
             10x7=70
         */
 
-
         cout<<"Dame un numero: ";
         cin>>N;
 
-
         C=N;
-
 
         for(i=1; i<=10; i++){
             C=N*i;
             cout<< i <<'x'<< N <<'='<< C << endl;
         }
 
-
         break;
-
-
 
     case 12:
         /* Ejercicio 12. Escriba un programa que pida un número N e imprima todas las potencias desde N**1 hasta N**5.
@@ -336,10 +296,8 @@ int main()
             3∧5=243
         */
 
-
         cout<<"Dame un numero: ";
         cin>>N;
-
 
         C=N;
 
@@ -350,11 +308,7 @@ int main()
             cout<< N <<" elevado a "<< i <<'='<< C << endl;
         }
 
-
         break;
-
-
-
 
     case 13:
         /* Ejercicio 13. Escriba un programa que pida un número N e imprima todos los divisores de N.
@@ -365,12 +319,10 @@ int main()
             4
         */
 
-
         cout<<"Dame un numero: ";
         cin>>N;
 
         cout<<"Los divisores de "<< N << " son: "<<endl;
-
 
         for (i=1; i<=N; i++){
             if ((N%i)==0){
@@ -378,11 +330,7 @@ int main()
             }
         }
 
-
         break;
-
-
-
 
     case 14:
         /* Ejercicio 14. Escriba un programa que imprima dos columnas paralelas, una con los números del 1 al 50 y otra con los números del 50 al 1.
@@ -392,15 +340,11 @@ int main()
             3 48
         */
 
-
         for( i=1; i<=50 ; i++ ){
             cout<< i << ' ' << 51-i <<endl;
         }
 
-
-
         break;
-
 
     case 15:
         /* Ejercicio 15. Escriba un programa que pida constantemente números hasta que se ingrese el número cero e imprima en pantalla la suma de todos
@@ -410,25 +354,16 @@ int main()
             El resultado de la sumatoria es: 6
         */
 
-
-
         do {
-
             cout<<"Dame numeros: ";
             cin>>N;
             C=C+N;
         }
         while(N!=0);
 
-
         cout<<"El resultado de la sumatoria es: "<< C <<endl;
 
-
-
         break;
-
-
-
 
     case 16:
         /* Ejercicio 16. Escriba un programa que pida constantemente números hasta que se ingrese el número cero e imprima en pantalla el promedio de los
@@ -441,7 +376,6 @@ int main()
         i =-1;
 
         do {
-
             cout<<"Dame numeros: ";
             cin>>N;
             C=C+N;
@@ -453,12 +387,7 @@ int main()
 
         cout<<"El promedio es: "<< C <<endl;
 
-
-
         break;
-
-
-
 
     case 17:
         /* Ejercicio 17. Escriba un programa que pida constantemente números hasta que se ingrese el número cero e imprima en pantalla el mayor de todos los
@@ -468,13 +397,11 @@ int main()
             El numero mayor fue: 3
         */
 
-
         cout<<"Dame numeros: ";
         cin>>C;
 
         if (C==0){
         cout<<"El numero mayor fue: "<< C <<endl;
-
         }
 
         else{
@@ -484,19 +411,12 @@ int main()
 
             if (D>C)
                 C=D;
-        }
-
+        }            
         while(D!=0);
 
-
         cout<<"El numero mayor fue: "<< C <<endl;
-
-}
-
+}        
         break;
-
-
-
 
     case 18:
         /* Ejercicio 18. Escriba un programa que pida un número N e imprima si es o no un cuadrado perfecto.
@@ -510,7 +430,6 @@ int main()
         cout<<"Dame un numero: ";
         cin>>N;
 
-
         k=0;
 
         for( i=1 ; i<=N ; i++){
@@ -523,9 +442,7 @@ int main()
         else
             cout<< N << " NO es un cuadrado perfecto."<<endl;
 
-
         break;
-
 
     case 19:
         /* Ejercicio 19. Escriba un programa que pida un número N e imprima si es o no un número primo.
@@ -535,10 +452,8 @@ int main()
             8 NO es un numero primo.
         */
 
-
         cout<<"Dame un numero: ";
         cin>>N;
-
 
         k=0;
 
@@ -552,9 +467,7 @@ int main()
         else
             cout<< N << " NO es un numero primo."<<endl;
 
-
         break;
-
 
     case 20:
         /* Ejercicio 20. Escriba un programa que pida un número N e imprima si es o no un palíndromo (igual de derecha a izquierda que de izquierda a derecha).
@@ -563,7 +476,6 @@ int main()
             y si se ingresa 123 se debe imprimir:
             123 NO es un numero palindromo.
         */
-
 
         cout<<"Dame un numero: ";
         cin>>N;
@@ -579,13 +491,12 @@ int main()
             i++;
         }
 
+    //    for(i=1;)
+
 
          cout<<i;
 
-
-
-
-    //    break;
+        break;
 
 
 
@@ -598,28 +509,37 @@ int main()
             Letra convertida: K
         */
 
+        cout<<"Dame un caracter: ";
+        cin>>Cchar;
 
-
-
-
-    //    break;
-
-
+        if(Cchar>=65 && Cchar<=90){
+            Cchar=Cchar+32;
+            cout<<"Letra convertida: "<< Cchar <<endl<<endl;
+        }
+        else if(Cchar>=97 && Cchar<=122){
+            Cchar=Cchar-32;
+        cout<<"Letra convertida: "<< Cchar <<endl<<endl;
+}
+        break;
 
     case 22:
-        /* Ejercicio 22. Escriba un programa que pida una cantidad entera de segundos y la imprima en
-            formato horas:minutos:segundos.
+        /* Ejercicio 22. Escriba un programa que pida una cantidad entera de segundos y la imprima en formato horas:minutos:segundos.
             Ej: si se ingresa 7777 se debe imprimir:
             2:9:37
         */
 
+        cout<<"Dame los segundos: ";
+        cin>>A;
 
+        cout<<A/3600<<':';          //horas=A/3600 en enteros por debajo. Así se expresan las horas en segundos.
 
+        B=(A-(A/3600)*3600)/60;    //Se calcula cuántos segundos quedas después de quitarle los segundos correspondiente a las horas con: A - horas en segundos(o sea las horas multiplicados por 3600),
+        cout<<B<<':';              //y los minutos B se calculan dividiendo esto por 60 que es lo correspondiente para expresarlo en segundos.
 
+        N= A-(A/3600)*3600-B*60;    // Los segundos serían lo sobrante. O sea A - las horas en segundos - Los minutos en segundos.
+        cout<< N<<endl<<endl;
 
-    //    break;
-
-
+        break;
 
     case 23:
         /* Ejercicio 23. Escriba un programa que pida dos números A y B e imprima en pantalla el mínimo común múltiplo entre los dos.
@@ -628,10 +548,31 @@ int main()
         */
 
 
+     //   cout<<"Dame dos numeros: ";
+       // cin>> A , B;
+
+           cout<<"Dame un numero: ";
+           cin>> A;
+
+           cout<<"Dame otro numero: ";
+           cin>>B;
 
 
 
-    //    break;
+
+           for (i=1; i<=A; i++){
+               N=A*i;
+               for (j=1; j<=B; j++){
+                   E=B*j;
+
+                   if(N==E)
+                       cout<<"El MCM de "<< A <<" y "<< B << " es: "<< N <<endl<<endl;
+               }
+           }
+
+
+
+        break;
 
 
     case 24:
@@ -644,13 +585,21 @@ int main()
             ++++
         */
 
+           cout<<"Dame un numero entero: ";
+           cin>>A;
 
+           for(i=1; i<=A ; i++){
+               for(j=1; j<=A ; j++){
 
+                   if(i==1 || i==A || j==1 || j==A)
+                       cout<<'+';
+                   else
+                       cout<<' ';
+                   }
+               cout<<endl;
+               }
 
-
-    //    break;
-
-
+        break;
 
     case 25:
         /* Ejercicio 25. Escriba un programa que pida un número N e imprima en pantalla la cantidad de dígitos de N.
@@ -658,13 +607,20 @@ int main()
             1234 tiene 4 digitos.
         */
 
+        cout<<"Dame un numero: ";
+        cin>>N;
 
+        cout<<N;
+        i=0;
 
+        while(N>0){
+            N=N/10;
+            i++;
+        }
 
+        cout<<" tiene 4 digitos."<<endl<<endl;
 
-    //    break;
-
-
+        break;
 
     case 26:
         /* Ejercicio 26. Escriba un programa que pida tres números e imprima el tipo de triangulo (isósceles, equilátero, escaleno) que se formaría, si
@@ -675,13 +631,25 @@ int main()
             Las longitudes ingresadas no forman un triangulo.
         */
 
+        cout<<"Dame un numero: ";
+        cin>>Adouble;
+        cout<<"Dame un otro numero: ";
+        cin>>C;
+        cout<<"Otro, tacaño: ";
+        cin>>D;
 
+        //Comprovemos si pueden formar un triángulo
+        //En cualquier triángulo, la suma de dos de sus lados siempre es mayor que el tercer lado.
+        if(A>(C+D) || C>(A+D) || D>(A+C))
+            cout<<"Las longitudes ingresadas no forman un triangulo."<<endl<<endl;
+        else if(A==C && A==D)
+                cout<<"Se forma un triangulo equilatero"<<endl<<endl;
+        else if(A==C || A==D || C==D)
+                cout<<"Se forma un triangulo isoceles"<<endl<<endl;
+        else
+                cout<<"Se forma un triangulo escaleno"<<endl<<endl;
 
-
-
-    //    break;
-
-
+        break;
 
     case 27:
         /* Ejercicio 27. Escriba un programa que actúe como una calculadora con operaciones de suma, resta, multiplicación y división, el usuario debe
@@ -690,13 +658,27 @@ int main()
             3+5=8
         */
 
+        cout<<"numero: ";
+        cin>>A;
+        cout<<"operador: ";
+        cin>>Cchar;
+        cout<<"numero: ";
+        cin>>B;
 
+        if (Cchar=='+')
+            cout<<A<<Cchar<<B<<'='<<A+B<<endl<<endl;
+        else if (Cchar=='-')
+            cout<<A<<Cchar<<B<<'='<<A-B<<endl<<endl;
+        else if (Cchar=='x' || Cchar=='*')
+            cout<<A<<Cchar<<B<<'='<<A*B<<endl<<endl;
+        else if (Cchar=='/')
+            cout<<A<<Cchar<<B<<'='<<A/B<<endl<<endl;
+        else if (Cchar=='%')
+            cout<<A<<Cchar<<B<<'='<<A%B<<endl<<endl;
+        else
+            cout<<"El operador ingresado no es valido."<<endl<<endl;
 
-
-
-    //    break;
-
-
+        break;
 
     case 28:
         /* Ejercicio 28. Escriba un programa que encuentre el valor aproximado de pi en base a la siguiente suma innita:
