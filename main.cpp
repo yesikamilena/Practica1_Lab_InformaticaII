@@ -16,6 +16,7 @@ int main()
 
 
     int A;
+    double Adouble;
     int B;
     double C=0;
     double D;
@@ -135,24 +136,47 @@ int main()
         */
 
 
-        cout<<"Dame un numero: ";
-        cin>>A;             //A será la base
-        cout<<"Dame otro numero: ";
+        cout<<"Dame un numero para la base: ";
+        cin>>Adouble;             //A será la base
+        cout<<"Dame otro numero para el exponente: ";
         cin>>B;             //B será el exponente
 
         C=B;
 
-        D=A;
-        if(C==0)          //condición para elevar a 0
-            D=1;
+        D=Adouble;
+        if(C==0){          //condición para elevar a 0
+            if (Adouble==0){
+                cout<< Adouble << " elevado a "<< B << '='<< " Indefinido"<<endl<<endl;
+            }
+            else {
+                cout<<Adouble<<" elevado a "<<B<<"="<<1<<endl<<endl;
+            }
+
+        }
+
+        else if (C<0){
+            Adouble=1.0/Adouble;
+            D=Adouble;
+
+            while (C+1<0){  //Se pone el -1, porque en la primera iteración se multiplican dos veces la base.
+
+            D=D*Adouble;
+            C++;
+        }
+            cout<<A<<" elevado a "<<B<<"="<<D<<endl<<endl;
+
+        }
+
+
         else{
             while (C-1>0){  //Se pone el -1, porque en la primera iteración se multiplican dos veces la base.
             D=D*A;
             C--;
         }
+
+                    cout<<A<<" elevado a "<<B<<"="<<D<<endl<<endl;
         }
 
-        cout<<A<<" elevado a "<<B<<"="<<D<<endl<<endl;
         break;
 
 
@@ -540,6 +564,23 @@ int main()
             123 NO es un numero palindromo.
         */
 
+
+        cout<<"Dame un numero: ";
+        cin>>N;
+
+       // cout<< N;
+
+        i=0;
+
+        //Miremos la longitud
+
+        while(N>0){
+            N=N/10;
+            i++;
+        }
+
+
+         cout<<i;
 
 
 
